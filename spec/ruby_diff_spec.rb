@@ -22,3 +22,5 @@ describe "RubyDiff" do
     @rd.node_diff.size.should == 6
   end
 end
+
+
