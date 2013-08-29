@@ -1,6 +1,5 @@
 require "ruby_diff/htmlize"
 
-
 describe "Htmlize" do
 
   it "should clear the uid variables" do
@@ -30,4 +29,5 @@ describe "Htmlize" do
     html.uid_hash = { banana: "cow" }
     html.uid(:banana).should =~ /cow/
   end
+
 end

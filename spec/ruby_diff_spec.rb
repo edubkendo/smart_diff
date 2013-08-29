@@ -15,11 +15,12 @@ describe "RubyDiff" do
   end
 
   it "should parse the files into ASTs" do
-    @rd.parse(@rd.file_one).instance_of?(org.jrubyparser.ast.RootNode).should be(true)
+    code_for_parse = @rd.read(@rd.file_one)
+    @rd.parse(code_for_parse, @rd.file_one).instance_of?(org.jrubyparser.ast.RootNode).should be(true)
   end
 
   it "should create a diff of the two ASTs" do
-    @rd.node_diff.size.should == 6
+    @rd.node_diff.size.should == 10
   end
 end
 
