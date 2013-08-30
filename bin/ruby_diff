@@ -1,0 +1,44 @@
+#!/usr/bin/env ruby
+
+require_relative "../lib/ruby_diff"
+require_relative "../lib/ruby_diff/htmlize"
+
+file_path1 = ARGV[0]
+file_path2 = ARGV[1]
+
+rd = RubyDiff.new(file_path1, file_path2)
+
+nd = rd.node_diff.to_a
+
+# Subdiffs use levenschtein distances to match up nodes. This won't work on the full diff,
+# because it has too many chances to create false positives. However, within a subdiff, it can be
+# pretty accurate because its less likely to have many highly similar nodes. Here's an example of
+# using those subdiffs to improve the diffing results.
+
+subs = []
+
+nd.each do |d|
+  if d.subdiff
+    subs << d.subdiff[0] unless !d.subdiff[0]
+  end
+end
+
+complete = nd.map do |dd|
+  subs.each do |c|
+    if dd.old_node && c.old_node and !dd.new_node && c.new_node
+      if dd.old_node.isSame(c.old_node)
+        dd.new_node = c.new_node
+      end
+    elsif dd.new_node && c.new_node and !dd.old_node && c.old_node
+      if dd.new_node.isSame(c.new_node)
+        dd.new_node = nil
+      end
+    end
+  end
+  dd unless dd.new_node == nil
+end
+
+complete.delete(nil)
+
+html = Htmlize.new
+html.create_html(complete, file_path2, file_path1, rd.code_two, rd.code_one)

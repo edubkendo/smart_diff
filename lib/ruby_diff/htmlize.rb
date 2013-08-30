@@ -85,7 +85,7 @@ class Htmlize
     tagged_text1 = apply_tags(text1, tags1)
     tagged_text2 = apply_tags(text2, tags2)
 
-    output_filename = "#{Pathname.new(file1).basename}-#{Pathname.new(file2).basename}"
+    output_filename = "#{Pathname.new(file1).basename}-#{Pathname.new(file2).basename}.html"
     File.open(output_filename, "w") do |f|
       f.write html_header
       f.write write_html(tagged_text1, 'left')
@@ -107,7 +107,7 @@ class Htmlize
       out << t.tag
     end
     while curr < s.length
-      out << CGI::escapeHTML
+      out << CGI::escapeHTML(s[curr])
       curr += 1
     end
     return out
@@ -116,19 +116,22 @@ class Htmlize
   def change_tags(changes, side)
     tags = []
     changes.each do |c|
-      key = side =~ /left/ ? c.old_node : c.new_node
-      nd_start = node_start(key)
-      nd_end - node_end(key)
 
-      if c.old_node && c.new_node
-        tags << Tag.new(link_start(c, side), nd_start)
-        tags << Tag.new('</a>', nd_end, nd_start)
-      else
-        tags << Tag.new(span_start(c), start)
-        tags << Tag.new('</span>', nd_end, nd_start)
+      key = side =~ /left/ ? c.old_node : c.new_node
+      if key
+        nd_start = node_start(key)
+        nd_end = node_end(key)
+
+        if c.old_node && c.new_node
+          tags << Tag.new(link_start(c, side), nd_start)
+          tags << Tag.new('</a>', nd_end, nd_start)
+        else
+          tags << Tag.new(span_start(c), nd_start)
+          tags << Tag.new('</span>', nd_end, nd_start)
+        end
       end
     end
-    return { tags: tags, closing_tags: closing_tags }
+    return tags
   end
 
   def change_class(change)
@@ -148,7 +151,7 @@ class Htmlize
   def link_start(change, side)
     cls = change_class(change)
 
-    if side = 'left'
+    if side == 'left'
       me, other = change.old_node, change.new_node
     else
       me, other = change.new_node, change.old_node

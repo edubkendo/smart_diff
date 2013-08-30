@@ -5,7 +5,7 @@ require "jruby-parser.jar"
 import org.jrubyparser.util.diff.NodeDiff
 
 class RubyDiff
-  attr_accessor :file_one, :file_two, :node_diff
+  attr_accessor :file_one, :file_two, :code_one, :code_two, :node_diff
 
 
   #
@@ -34,12 +34,14 @@ class RubyDiff
   end
 
   def diff()
-    code_one = read(@file_one)
-    code_two = read(@file_two)
-    nodeA = parse(code_one, @file_one)
-    nodeB = parse(code_two, @file_two)
-    nd = org.jrubyparser.util.diff.NodeDiff.new(nodeA, code_one, nodeB, code_two)
-    nd.deep_diff
+    @code_one = read(@file_one)
+    @code_two = read(@file_two)
+    if @code_one && @code_two
+      nodeA = parse(@code_one, @file_one)
+      nodeB = parse(@code_two, @file_two)
+      nd = org.jrubyparser.util.diff.NodeDiff.new(nodeA, @code_one, nodeB, @code_two)
+      nd.deep_diff
+    end
   end
 end
 

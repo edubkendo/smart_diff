@@ -26,10 +26,6 @@ class FileTree < Pathname
     puts @id
   end
 
-  def identifier
-    @identifier ||= self.inspect
-  end
-
   def name
     @name ||= self.inspect
   end
@@ -45,6 +41,10 @@ class FileTree < Pathname
     else
       []
     end
+  end
+
+  def identifier
+    @identifier ||= self.inspect
   end
 
 end
