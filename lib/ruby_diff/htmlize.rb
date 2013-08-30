@@ -92,6 +92,7 @@ class Htmlize
       f.write write_html(tagged_text2, 'right')
       f.write html_footer
     end
+    output_filename
 
   end
 
