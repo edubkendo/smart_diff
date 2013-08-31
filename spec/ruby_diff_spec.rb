@@ -20,7 +20,7 @@ describe "RubyDiff" do
   end
 
   it "should create a diff of the two ASTs" do
-    @rd.node_diff.size.should == 10
+    @rd.node_diff.size.should == 13
   end
 end
 
