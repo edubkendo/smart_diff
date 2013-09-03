@@ -48,3 +48,5 @@ class FileTree < Pathname
   end
 
 end
+
+puts "Some stuff"

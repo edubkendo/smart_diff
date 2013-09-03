@@ -12,26 +12,34 @@ rd = RubyDiff.new(file_path1, file_path2)
 
 nd = rd.node_diff.to_a
 
-# Subdiffs use levenschtein distances to match up nodes. This won't work on the full diff,
-# because it has too many chances to create false positives. However, within a subdiff, it can be
-# pretty accurate because its less likely to have many highly similar nodes. Here's an example of
-# using those subdiffs to improve the diffing results.
+# Subdiffs use levenschtein distances to match up nodes. This won't work on
+# the full diff, because it has too many chances to create false positives.
+# However, within a subdiff, it can be pretty accurate because its less
+# likely to have many highly similar nodes. Here's an example of using those
+# subdiffs to improve the diffing results.
 
 puts "Examining subdiffs to improve results."
+
+# Gather up subdiffs
 
 subs = []
 
 nd.each do |d|
   if d.subdiff
-    subs << d.subdiff[0] unless !d.subdiff[0]
+    d.subdiff.each do |s|
+      subs << s
+    end
   end
 end
+
+# Go through our diff, removing any diff which matches a subdiff
+# We create a few nils in the process, so we strip those out at the end
 
 complete = nd.map do |dd|
   subs.each do |c|
     if dd.old_node && c.old_node and !dd.new_node && c.new_node
       if dd.old_node.isSame(c.old_node)
-        dd.new_node = c.new_node
+        dd.old_node = nil
       end
     elsif dd.new_node && c.new_node and !dd.old_node && c.old_node
       if dd.new_node.isSame(c.new_node)
@@ -39,10 +47,19 @@ complete = nd.map do |dd|
       end
     end
   end
-  dd unless dd.new_node == nil
+  dd unless dd.new_node == nil && dd.old_node == nil
 end
 
-complete.delete(nil)
+complete.compact!
+
+# Add all the subdiffs onto the end of our list of diffs
+# We need them at the end so later we can make sure we are
+# not creating nested anchor tags.
+
+subs.each do |c|
+  complete << c
+end
+
 
 puts "Creating html output."
 

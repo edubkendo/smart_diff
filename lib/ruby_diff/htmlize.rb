@@ -10,6 +10,10 @@ class Tag
     @start = start
   end
 
+  def to_s
+    "tag: #{@tag}, idx: #{@idx} start: #{@start}"
+  end
+
 end
 
 class Htmlize
@@ -124,8 +128,17 @@ class Htmlize
         nd_end = node_end(key)
 
         if c.old_node && c.new_node
-          tags << Tag.new(link_start(c, side), nd_start)
-          tags << Tag.new('</a>', nd_end, nd_start)
+          if inside_anchor?(tags, nd_start, nd_end)
+            if change_class(c) =~ /c/
+              # no op
+            else
+              tags << Tag.new(span_start(c), nd_start)
+              tags << Tag.new('</span>', nd_end, nd_start)
+            end
+          else
+            tags << Tag.new(link_start(c, side), nd_start)
+            tags << Tag.new('</a>', nd_end, nd_start)
+          end
         else
           tags << Tag.new(span_start(c), nd_start)
           tags << Tag.new('</span>', nd_end, nd_start)

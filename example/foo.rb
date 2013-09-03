@@ -29,6 +29,7 @@ class FileTree < Pathname
   # @return [FileTree] The directory immediately above self.
   #
   def parent
+    puts "Here's Johnny!"
     FileTree.new(_parent)
   end
 
@@ -46,3 +47,5 @@ class FileTree < Pathname
   end
 
 end
+
+puts "And now for something completely different"

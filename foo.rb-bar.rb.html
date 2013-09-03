@@ -404,15 +404,15 @@ class FileTree &lt; Pathname
   attr_accessor :name, :id, :identifier
 
   <a id='0' tid='1' class='c'>def name
-    <a id='10' tid='11' class='c'>@name ||= self.inspect</a>
+    @name ||= self.inspect
   end</a>
 
   <a id='2' tid='3' class='c'>def id
-    <a id='12' tid='13' class='c'>@id ||= self.inspect</a>
+    @id ||= self.inspect
   end</a>
 
   <a id='4' tid='5' class='c'>def identifier
-    <a id='14' tid='15' class='c'>@identifier ||= self.inspect</a>
+    @identifier ||= self.inspect
   end</a>
 
   #
@@ -421,7 +421,8 @@ class FileTree &lt; Pathname
   # @return [FileTree] The directory immediately above self.
   #
   <a id='6' tid='7' class='c'>def parent
-    <a id='16' tid='17' class='c'>FileTree.new(_parent)</a>
+    <span class='i'>puts <span class='i'>&quot;Here's Johnny!&quot;</span></span>
+    FileTree.new(_parent)
   end</a>
 
   #
@@ -438,6 +439,8 @@ class FileTree &lt; Pathname
   end</a>
 
 end
+
+puts <span class='i'>&quot;And now for something completely different&quot;</span>
 </pre></div><div id="right" class="src"><pre><a id="rightstart" tid="leftstart"></a>require &quot;pathname&quot;
 require &quot;filetree/simple_tree&quot;
 
@@ -457,17 +460,17 @@ class FileTree &lt; Pathname
   # @return [FileTree] The directory immediately above self.
   #
   <a id='7' tid='6' class='c'>def parent
-    <a id='17' tid='16' class='c'>ft = FileTree.new(_parent)</a>
-    <span class='d'>return ft</span>
+    ft = FileTree.new(_parent)
+    <span class='d'><span class='d'>return ft</span></span>
   end</a>
 
   <a id='3' tid='2' class='c'>def id
-    <a id='13' tid='12' class='c'>@id ||= self.inspect</a>
-    <span class='d'>puts @id</span>
+    @id ||= self.inspect
+    <span class='d'>puts <span class='d'>@id</span></span>
   end</a>
 
   <a id='1' tid='0' class='c'>def name
-    <a id='11' tid='10' class='c'>@name ||= self.inspect</a>
+    @name ||= self.inspect
   end</a>
 
   #
@@ -484,10 +487,12 @@ class FileTree &lt; Pathname
   end</a>
 
   <a id='5' tid='4' class='c'>def identifier
-    <a id='15' tid='14' class='c'>@identifier ||= self.inspect</a>
+    @identifier ||= self.inspect
   end</a>
 
 end
+
+puts <span class='d'>&quot;Some stuff&quot;</span>
 </pre></div></body>
 
              </html>

@@ -17,4 +17,13 @@ module Utils
     node.position.end_offset
   end
 
+  def inside_anchor?(tags, nd_start, nd_end)
+      tags.each do |t|
+        if nd_end < t.idx && nd_start > t.start && t.start != -1
+          return true
+        end
+      end
+      return false
+  end
+
 end
