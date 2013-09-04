@@ -14,13 +14,17 @@ describe "RubyDiff" do
     @rd.read(@rd.file_one).class.should == String
   end
 
+  it "should raise an exception if the file does not exist" do
+    expect { @rd.read('foo/foofile.rb') }.to raise_error(StandardError)
+  end
+
   it "should parse the files into ASTs" do
     code_for_parse = @rd.read(@rd.file_one)
     @rd.parse(code_for_parse, @rd.file_one).instance_of?(org.jrubyparser.ast.RootNode).should be(true)
   end
 
   it "should create a diff of the two ASTs" do
-    @rd.node_diff.size.should == 13
+    @rd.node_diff.size.should >= 1
   end
 end
 

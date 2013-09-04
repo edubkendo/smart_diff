@@ -26,6 +26,8 @@ class RubyDiff
     path = Pathname.new(file_name).expand_path
     if path.exist?
       File.read path
+    else
+      raise "#{path} not found. Check the path."
     end
   end
 
