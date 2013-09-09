@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>
+  File: README
+  
+    &mdash; Documentation by YARD 0.8.6.1
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!" + escape(window.location.href);
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index</a> &raquo; 
+    <span class="title">File: README</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><div id='filecontents'>
+<h1 id="label-RubyDiff">RubyDiff</h1>
+
+<p>This is a port to Ruby of part of @yinwang0&#39;s <a
+href="https://github.com/yinwang0/psydiff">psydiff</a>. Specifically,
+I&#39;ve ported the htmlizer part of his app, which converts a semantic
+diff into an html page which can be viewed in a webbrowser to make visual
+the information contained in the diff. @yinwang0 has written extensively
+about semantic diffing <a
+href="http://yinwang0.wordpress.com/2012/01/03/ydiff/">on his blog</a> and
+also about <a
+href="http://yinwang0.wordpress.com/2013/07/06/psydiff/">psydiff</a>.</p>
+
+<p>I created this port to demonstrate the use of the NodeDiff classes I
+recently added to <a
+href="https://github.com/jruby/jruby-parser">JRubyParser</a> and to serve
+as an example of using it. I should make clear that JRubyParser and said
+NodeDiff classes are entirely unrelated to psydiff, except that they do
+something quite similar (create a diff of source code based on the AST
+rather than comparing the text directly).</p>
+
+<p>This application should especially serve as an example of using the
+subdiff&#39;s produced by NodeDiff to improve the quality of the output.
+See <code>bin/ruby_diff</code> .</p>
+
+<h2 id="label-Usage">Usage</h2>
+
+<p>To run this, you&#39;ll need to have <code>JRuby</code> and the
+<code>jruby-parser</code> gem installed. Then run
+<code>bin/ruby_diff</code> along with the paths to two versions of a ruby
+source file.</p>
+
+<pre class="code ruby"><code class="ruby">bin/ruby_diff example/bar.rb example/foo.rb</code></pre>
+
+<p>This will output an html file you can open in your browser. Check out
+<code>foo.rb-bar.rb.html</code> for a sample of the output.</p>
+
+<p>LICENSE</p>
+
+<p>Copyright (C) 2011-2013 Yin Wang</p>
+
+<p>This program is free software: you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published by the Free
+Software Foundation, either version 3 of the License, or (at your option)
+any later version.</p>
+
+<p>This program is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for
+more details.</p>
+
+<p>You should have received a copy of the GNU General Public License along
+with this program. If not, see <a
+href="http://www.gnu.org/licenses">www.gnu.org/licenses</a>/.</p>
+</div></div>
+
+    <div id="footer">
+  Generated on Sun Sep  8 23:55:28 2013 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.6.1 (ruby-2.0.0).
+</div>
+
+  </body>
+</html>

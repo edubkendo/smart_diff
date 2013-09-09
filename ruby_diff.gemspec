@@ -1,3 +1,5 @@
+files = `git ls-files -- doc/* example/* lib/* spec/* web/*`.split("\n")
+
 Gem::Specification.new do |s|
   s.name        = 'ruby_diff'
   s.version     = '0.0.1'
@@ -8,25 +10,20 @@ Gem::Specification.new do |s|
   s.email       = 'esw9999@gmail.com'
   s.files       =
                   [
-                    "lib/ruby_diff.rb",
-                    "lib/ruby_diff/htmlize.rb",
-                    "lib/ruby_diff/utils.rb",
                     "bin/ruby_diff",
-                    "example/foo.rb",
-                    "example/bar.rb",
-                    "spec/ruby_diff_spec.rb",
-                    "spec/htmlize_spec.rb",
-                    "spec/utils_spec.rb",
-                    "web/nav.js",
-                    "web/diff.css",
                     "README.md",
+                    "foo.rb-bar.rb.html",
                     "Rakefile"
                   ]
+  s.files << files
   s.executables  << 'ruby_diff'
+  s.test_files = `git ls-files -- spec/*`.split("\n")
   s.platform    = Gem::Platform::RUBY
+  s.has_rdoc    = 'yard'
   s.homepage    =
     'http://github.com/edubkendo/RubyDiff.git'
   s.license       = 'GPL'
   s.add_dependency 'jruby-parser', '~> 0.5.1'
   s.add_development_dependency 'rspec' '~> 2.14.0'
+  s.add_development_dependency 'yard'
 end
