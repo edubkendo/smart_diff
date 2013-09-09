@@ -1,1 +1,4 @@
 .idea*
+.sublime*
+ruby_diff.sublime-project
+ruby_diff.sublime-workspace
