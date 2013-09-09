@@ -19,9 +19,14 @@ Gem::Specification.new do |s|
                     "spec/utils_spec.rb",
                     "web/nav.js",
                     "web/diff.css",
-                    "README.md"
+                    "README.md",
+                    "Rakefile"
                   ]
+  s.executables  << 'ruby_diff'
+  s.platform    = Gem::Platform::RUBY
   s.homepage    =
     'http://github.com/edubkendo/RubyDiff.git'
   s.license       = 'GPL'
+  s.add_dependency 'jruby-parser', '~> 0.5.1'
+  s.add_development_dependency 'rspec' '~> 2.14.0'
 end
