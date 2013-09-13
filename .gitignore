@@ -1,5 +1,5 @@
 .idea*
 .sublime*
-ruby_diff.sublime-project
-ruby_diff.sublime-workspace
+smart_diff.sublime-project
+smart_diff.sublime-workspace
 .yardoc/

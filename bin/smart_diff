@@ -1,14 +1,14 @@
 #!/usr/bin/env ruby
 
-require_relative "../lib/ruby_diff"
-require_relative "../lib/ruby_diff/htmlize"
+require_relative "../lib/smart_diff"
+require_relative "../lib/smart_diff/htmlize"
 
 file_path1 = ARGV[0]
 file_path2 = ARGV[1]
 
 puts "Creating Diff from #{file_path1} and #{file_path2}"
 
-rd = RubyDiff.new(file_path1, file_path2)
+rd = SmartDiff.new(file_path1, file_path2)
 
 nd = rd.node_diff.to_a
 

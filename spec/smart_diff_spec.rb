@@ -1,8 +1,8 @@
-require "ruby_diff"
+require "smart_diff"
 
-describe "RubyDiff" do
+describe "SmartDiff" do
   before(:each) do
-    @rd = RubyDiff.new 'example/foo.rb', 'example/bar.rb'
+    @rd = SmartDiff.new 'example/foo.rb', 'example/bar.rb'
   end
 
   it "should take two filenames" do

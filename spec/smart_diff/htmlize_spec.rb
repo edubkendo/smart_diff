@@ -1,4 +1,4 @@
-require "ruby_diff/htmlize"
+require "smart_diff/htmlize"
 
 describe "Htmlize" do
 

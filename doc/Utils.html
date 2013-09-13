@@ -83,7 +83,7 @@
   
   
     <dt class="r2 last">Defined in:</dt>
-    <dd class="r2 last">lib/ruby_diff/utils.rb</dd>
+    <dd class="r2 last">lib/smart_diff/utils.rb</dd>
   
 </dl>
 <div class="clear"></div>
@@ -222,7 +222,7 @@
 10</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/ruby_diff/utils.rb', line 6</span>
+      <pre class="code"><span class="info file"># File 'lib/smart_diff/utils.rb', line 6</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get_install_path'>get_install_path</span>
   <span class='id identifier rubyid_utils_path'>utils_path</span> <span class='op'>=</span> <span class='const'>Pathname</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='kw'>__FILE__</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_dirname'>dirname</span>
@@ -281,7 +281,7 @@
 27</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/ruby_diff/utils.rb', line 20</span>
+      <pre class="code"><span class="info file"># File 'lib/smart_diff/utils.rb', line 20</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_inside_anchor?'>inside_anchor?</span><span class='lparen'>(</span><span class='id identifier rubyid_tags'>tags</span><span class='comma'>,</span> <span class='id identifier rubyid_nd_start'>nd_start</span><span class='comma'>,</span> <span class='id identifier rubyid_nd_end'>nd_end</span><span class='rparen'>)</span>
     <span class='id identifier rubyid_tags'>tags</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_t'>t</span><span class='op'>|</span>
@@ -316,7 +316,7 @@
 18</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/ruby_diff/utils.rb', line 16</span>
+      <pre class="code"><span class="info file"># File 'lib/smart_diff/utils.rb', line 16</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_node_end'>node_end</span><span class='lparen'>(</span><span class='id identifier rubyid_node'>node</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_node'>node</span><span class='period'>.</span><span class='id identifier rubyid_position'>position</span><span class='period'>.</span><span class='id identifier rubyid_end_offset'>end_offset</span>
@@ -346,7 +346,7 @@
 14</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/ruby_diff/utils.rb', line 12</span>
+      <pre class="code"><span class="info file"># File 'lib/smart_diff/utils.rb', line 12</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_node_start'>node_start</span><span class='lparen'>(</span><span class='id identifier rubyid_node'>node</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_node'>node</span><span class='period'>.</span><span class='id identifier rubyid_position'>position</span><span class='period'>.</span><span class='id identifier rubyid_start_offset'>start_offset</span>
@@ -361,7 +361,7 @@
 </div>
 
     <div id="footer">
-  Generated on Sun Sep  8 23:55:28 2013 by
+  Generated on Fri Sep 13 17:10:49 2013 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.6.1 (ruby-2.0.0).
 </div>

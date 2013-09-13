@@ -1,4 +1,4 @@
-require "ruby_diff/utils"
+require "smart_diff/utils"
 
 class Position
   def start_offset
