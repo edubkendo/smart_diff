@@ -84,16 +84,20 @@ rather than comparing the text directly).</p>
 
 <p>This application should especially serve as an example of using the
 subdiff&#39;s produced by NodeDiff to improve the quality of the output.
-See <code>bin/smart_diff</code> .</p>
+See <code>bin/smart_diff</code>  or <a
+href="http://rubydoc.info/gems/smart_diff/0.0.1/frames">check out the
+docs</a>.</p>
+
+<h2 id="label-Install">Install</h2>
+
+<pre class="code ruby"><code class="ruby">$ jruby -S gem install smart_diff</code></pre>
 
 <h2 id="label-Usage">Usage</h2>
 
-<p>To run this, you&#39;ll need to have <code>JRuby</code> and the
-<code>jruby-parser</code> gem installed. Then run
-<code>bin/smart_diff</code> along with the paths to two versions of a ruby
+<p>Run <code>smart_diff</code> along with the paths to two versions of a ruby
 source file.</p>
 
-<pre class="code ruby"><code class="ruby">bin/smart_diff example/bar.rb example/foo.rb</code></pre>
+<pre class="code ruby"><code class="ruby">smart_diff example/bar.rb example/foo.rb</code></pre>
 
 <p>This will output an html file you can open in your browser. Check out
 <code>foo.rb-bar.rb.html</code> for a sample of the output.</p>
@@ -118,7 +122,7 @@ href="http://www.gnu.org/licenses">www.gnu.org/licenses</a>/.</p>
 </div></div>
 
     <div id="footer">
-  Generated on Fri Sep 13 17:10:44 2013 by
+  Generated on Sat Sep 14 03:08:09 2013 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.6.1 (ruby-2.0.0).
 </div>

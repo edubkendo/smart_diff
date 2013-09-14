@@ -99,7 +99,23 @@
 </dl>
 <div class="clear"></div>
 
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>A Tag wrapping an element in an HTML file. It contains information about
+the node wrapped inside it such as the start and end offset. The `tag` attr
+contains the actual HTML, and includes information used to style the nodes
+based on whether its an insertion, deletion or modification. Matching
+modifications are wrapped in anchor tags so they can be linked to their
+matches.</p>
 
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
 
 
 
@@ -220,7 +236,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>A new instance of Tag.</p>
+<p>Construct a new tag.</p>
 </div></span>
   
 </li>
@@ -229,7 +245,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#to_s-instance_method" title="#to_s (instance method)">- (Object) <strong>to_s</strong> </a>
+      <a href="#to_s-instance_method" title="#to_s (instance method)">- (String) <strong>to_s</strong> </a>
     
 
     
@@ -243,7 +259,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>String representation of the Tag object.</p>
+</div></span>
   
 </li>
 
@@ -266,13 +284,69 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>A new instance of Tag</p>
+<p>Construct a new tag.</p>
+
+<p>The end offset of the node if it is a closing tag. for a closing tag.</p>
 
 
   </div>
 </div>
 <div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
   
+    <li>
+      
+        <span class='name'>tag</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>An HTML tag.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>idx</span>
+      
+      
+        <span class='type'>(<tt>Fixnum</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The start of the node&#39;s offset for an opening tag,</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>start</span>
+      
+      
+        <span class='type'>(<tt>Fixnum</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>-1)</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Left -1 for an open tag, the node&#39;s start offset</p>
+</div>
+      
+    </li>
+  
+</ul>
+
 
 </div><table class="source_code">
   <tr>
@@ -280,14 +354,14 @@
       <pre class="lines">
 
 
-7
-8
-9
-10
-11</pre>
+29
+30
+31
+32
+33</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/smart_diff/htmlize.rb', line 7</span>
+      <pre class="code"><span class="info file"># File 'lib/smart_diff/htmlize.rb', line 29</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_tag'>tag</span><span class='comma'>,</span> <span class='id identifier rubyid_idx'>idx</span><span class='comma'>,</span> <span class='id identifier rubyid_start'>start</span><span class='op'>=</span><span class='op'>-</span><span class='int'>1</span><span class='rparen'>)</span>
   <span class='ivar'>@tag</span> <span class='op'>=</span> <span class='id identifier rubyid_tag'>tag</span>
@@ -332,12 +406,12 @@
       <pre class="lines">
 
 
-5
-6
-7</pre>
+16
+17
+18</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/smart_diff/htmlize.rb', line 5</span>
+      <pre class="code"><span class="info file"># File 'lib/smart_diff/htmlize.rb', line 16</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_idx'>idx</span>
   <span class='ivar'>@idx</span>
@@ -375,12 +449,12 @@
       <pre class="lines">
 
 
-5
-6
-7</pre>
+16
+17
+18</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/smart_diff/htmlize.rb', line 5</span>
+      <pre class="code"><span class="info file"># File 'lib/smart_diff/htmlize.rb', line 16</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_start'>start</span>
   <span class='ivar'>@start</span>
@@ -418,12 +492,12 @@
       <pre class="lines">
 
 
-5
-6
-7</pre>
+16
+17
+18</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/smart_diff/htmlize.rb', line 5</span>
+      <pre class="code"><span class="info file"># File 'lib/smart_diff/htmlize.rb', line 16</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_tag'>tag</span>
   <span class='ivar'>@tag</span>
@@ -443,24 +517,53 @@
       <div class="method_details first">
   <h3 class="signature first" id="to_s-instance_method">
   
-    - (<tt>Object</tt>) <strong>to_s</strong> 
+    - (<tt>String</tt>) <strong>to_s</strong> 
   
 
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>String representation of the Tag object.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Tag as string.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-13
-14
-15</pre>
+40
+41
+42</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/smart_diff/htmlize.rb', line 13</span>
+      <pre class="code"><span class="info file"># File 'lib/smart_diff/htmlize.rb', line 40</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_to_s'>to_s</span>
   <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>tag: </span><span class='embexpr_beg'>#{</span><span class='ivar'>@tag</span><span class='embexpr_end'>}</span><span class='tstring_content'>, idx: </span><span class='embexpr_beg'>#{</span><span class='ivar'>@idx</span><span class='embexpr_end'>}</span><span class='tstring_content'> start: </span><span class='embexpr_beg'>#{</span><span class='ivar'>@start</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
@@ -475,7 +578,7 @@
 </div>
 
     <div id="footer">
-  Generated on Fri Sep 13 17:10:49 2013 by
+  Generated on Sat Sep 14 03:08:10 2013 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.6.1 (ruby-2.0.0).
 </div>

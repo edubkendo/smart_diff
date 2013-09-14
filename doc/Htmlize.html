@@ -103,7 +103,20 @@
 </dl>
 <div class="clear"></div>
 
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>Given information about two Ruby files, and their semantic diff, creates an
+HTML file to represent the diff information in an intuitive and appealing
+visual format.</p>
 
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
 
 
 
@@ -312,7 +325,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#html_header-instance_method" title="#html_header (instance method)">- (Object) <strong>html_header</strong> </a>
+      <a href="#html_header-instance_method" title="#html_header (instance method)">- (String) <strong>html_header</strong> </a>
     
 
     
@@ -326,7 +339,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Construct the HTML for the top of the file.</p>
+</div></span>
   
 </li>
 
@@ -426,7 +441,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#uid-instance_method" title="#uid (instance method)">- (Object) <strong>uid</strong>(node) </a>
+      <a href="#uid-instance_method" title="#uid (instance method)">- (Fixnum) <strong>uid</strong>(node) </a>
     
 
     
@@ -440,7 +455,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Give the node a uid, place it in the uid hash and up the count.</p>
+</div></span>
   
 </li>
 
@@ -510,13 +527,13 @@
       <pre class="lines">
 
 
-23
-24
-25
-26</pre>
+57
+58
+59
+60</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/smart_diff/htmlize.rb', line 23</span>
+      <pre class="code"><span class="info file"># File 'lib/smart_diff/htmlize.rb', line 57</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span>
   <span class='ivar'>@uid_count</span> <span class='op'>=</span> <span class='op'>-</span><span class='int'>1</span>
@@ -560,12 +577,12 @@
       <pre class="lines">
 
 
-21
-22
-23</pre>
+55
+56
+57</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/smart_diff/htmlize.rb', line 21</span>
+      <pre class="code"><span class="info file"># File 'lib/smart_diff/htmlize.rb', line 55</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_uid_count'>uid_count</span>
   <span class='ivar'>@uid_count</span>
@@ -603,12 +620,12 @@
       <pre class="lines">
 
 
-21
-22
-23</pre>
+55
+56
+57</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/smart_diff/htmlize.rb', line 21</span>
+      <pre class="code"><span class="info file"># File 'lib/smart_diff/htmlize.rb', line 55</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_uid_hash'>uid_hash</span>
   <span class='ivar'>@uid_hash</span>
@@ -640,26 +657,26 @@
       <pre class="lines">
 
 
-103
-104
-105
-106
-107
-108
-109
-110
-111
-112
-113
-114
-115
-116
-117
-118
-119</pre>
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/smart_diff/htmlize.rb', line 103</span>
+      <pre class="code"><span class="info file"># File 'lib/smart_diff/htmlize.rb', line 151</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_apply_tags'>apply_tags</span><span class='lparen'>(</span><span class='id identifier rubyid_s'>s</span><span class='comma'>,</span> <span class='id identifier rubyid_tags'>tags</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_tags'>tags</span> <span class='op'>=</span> <span class='id identifier rubyid_tags'>tags</span><span class='period'>.</span><span class='id identifier rubyid_sort_by'>sort_by</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_x'>x</span><span class='op'>|</span> <span class='lbracket'>[</span><span class='id identifier rubyid_x'>x</span><span class='period'>.</span><span class='id identifier rubyid_idx'>idx</span><span class='comma'>,</span> <span class='op'>-</span><span class='id identifier rubyid_x'>x</span><span class='period'>.</span><span class='id identifier rubyid_start'>start</span><span class='rbracket'>]</span> <span class='rbrace'>}</span>
@@ -698,18 +715,18 @@
       <pre class="lines">
 
 
-151
-152
-153
-154
-155
-156
-157
-158
-159</pre>
+203
+204
+205
+206
+207
+208
+209
+210
+211</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/smart_diff/htmlize.rb', line 151</span>
+      <pre class="code"><span class="info file"># File 'lib/smart_diff/htmlize.rb', line 203</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_change_class'>change_class</span><span class='lparen'>(</span><span class='id identifier rubyid_change'>change</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='op'>!</span><span class='id identifier rubyid_change'>change</span><span class='period'>.</span><span class='id identifier rubyid_old_node'>old_node</span>
@@ -740,38 +757,42 @@
       <pre class="lines">
 
 
-121
-122
-123
-124
-125
-126
-127
-128
-129
-130
-131
-132
-133
-134
-135
-136
-137
-138
-139
-140
-141
-142
-143
-144
-145
-146
-147
-148
-149</pre>
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/smart_diff/htmlize.rb', line 121</span>
+      <pre class="code"><span class="info file"># File 'lib/smart_diff/htmlize.rb', line 169</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_change_tags'>change_tags</span><span class='lparen'>(</span><span class='id identifier rubyid_changes'>changes</span><span class='comma'>,</span> <span class='id identifier rubyid_side'>side</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_tags'>tags</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
@@ -786,16 +807,20 @@
         <span class='kw'>if</span> <span class='id identifier rubyid_inside_anchor?'>inside_anchor?</span><span class='lparen'>(</span><span class='id identifier rubyid_tags'>tags</span><span class='comma'>,</span> <span class='id identifier rubyid_nd_start'>nd_start</span><span class='comma'>,</span> <span class='id identifier rubyid_nd_end'>nd_end</span><span class='rparen'>)</span>
           <span class='kw'>if</span> <span class='id identifier rubyid_change_class'>change_class</span><span class='lparen'>(</span><span class='id identifier rubyid_c'>c</span><span class='rparen'>)</span> <span class='op'>=~</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>c</span><span class='regexp_end'>/</span></span>
             <span class='comment'># no op
+</span>            <span class='comment'># we don&#39;t nest anchors inside other anchors
 </span>          <span class='kw'>else</span>
-            <span class='id identifier rubyid_tags'>tags</span> <span class='op'>&lt;&lt;</span> <span class='const'>Tag</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_span_start'>span_start</span><span class='lparen'>(</span><span class='id identifier rubyid_c'>c</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='id identifier rubyid_nd_start'>nd_start</span><span class='rparen'>)</span>
+            <span class='comment'># In this case, we have an insertion or deletion
+</span>            <span class='id identifier rubyid_tags'>tags</span> <span class='op'>&lt;&lt;</span> <span class='const'>Tag</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_span_start'>span_start</span><span class='lparen'>(</span><span class='id identifier rubyid_c'>c</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='id identifier rubyid_nd_start'>nd_start</span><span class='rparen'>)</span>
             <span class='id identifier rubyid_tags'>tags</span> <span class='op'>&lt;&lt;</span> <span class='const'>Tag</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>&lt;/span&gt;</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_nd_end'>nd_end</span><span class='comma'>,</span> <span class='id identifier rubyid_nd_start'>nd_start</span><span class='rparen'>)</span>
           <span class='kw'>end</span>
         <span class='kw'>else</span>
-          <span class='id identifier rubyid_tags'>tags</span> <span class='op'>&lt;&lt;</span> <span class='const'>Tag</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_link_start'>link_start</span><span class='lparen'>(</span><span class='id identifier rubyid_c'>c</span><span class='comma'>,</span> <span class='id identifier rubyid_side'>side</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='id identifier rubyid_nd_start'>nd_start</span><span class='rparen'>)</span>
+          <span class='comment'># Link up the matching nodes with anchor tags
+</span>          <span class='id identifier rubyid_tags'>tags</span> <span class='op'>&lt;&lt;</span> <span class='const'>Tag</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_link_start'>link_start</span><span class='lparen'>(</span><span class='id identifier rubyid_c'>c</span><span class='comma'>,</span> <span class='id identifier rubyid_side'>side</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='id identifier rubyid_nd_start'>nd_start</span><span class='rparen'>)</span>
           <span class='id identifier rubyid_tags'>tags</span> <span class='op'>&lt;&lt;</span> <span class='const'>Tag</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>&lt;/a&gt;</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_nd_end'>nd_end</span><span class='comma'>,</span> <span class='id identifier rubyid_nd_start'>nd_start</span><span class='rparen'>)</span>
         <span class='kw'>end</span>
       <span class='kw'>else</span>
-        <span class='id identifier rubyid_tags'>tags</span> <span class='op'>&lt;&lt;</span> <span class='const'>Tag</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_span_start'>span_start</span><span class='lparen'>(</span><span class='id identifier rubyid_c'>c</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='id identifier rubyid_nd_start'>nd_start</span><span class='rparen'>)</span>
+        <span class='comment'># Wrap a span around the insertion or deletion.
+</span>        <span class='id identifier rubyid_tags'>tags</span> <span class='op'>&lt;&lt;</span> <span class='const'>Tag</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_span_start'>span_start</span><span class='lparen'>(</span><span class='id identifier rubyid_c'>c</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='id identifier rubyid_nd_start'>nd_start</span><span class='rparen'>)</span>
         <span class='id identifier rubyid_tags'>tags</span> <span class='op'>&lt;&lt;</span> <span class='const'>Tag</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>&lt;/span&gt;</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_nd_end'>nd_end</span><span class='comma'>,</span> <span class='id identifier rubyid_nd_start'>nd_start</span><span class='rparen'>)</span>
       <span class='kw'>end</span>
     <span class='kw'>end</span>
@@ -822,13 +847,13 @@
       <pre class="lines">
 
 
-28
-29
-30
-31</pre>
+62
+63
+64
+65</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/smart_diff/htmlize.rb', line 28</span>
+      <pre class="code"><span class="info file"># File 'lib/smart_diff/htmlize.rb', line 62</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_clear_uid'>clear_uid</span><span class='lparen'>(</span><span class='rparen'>)</span>
   <span class='ivar'>@uid_count</span> <span class='op'>=</span> <span class='op'>-</span><span class='int'>1</span>
@@ -854,25 +879,25 @@
       <pre class="lines">
 
 
-86
-87
-88
-89
-90
-91
-92
-93
-94
-95
-96
-97
-98
-99
-100
-101</pre>
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/smart_diff/htmlize.rb', line 86</span>
+      <pre class="code"><span class="info file"># File 'lib/smart_diff/htmlize.rb', line 134</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_create_html'>create_html</span><span class='lparen'>(</span><span class='id identifier rubyid_changes'>changes</span><span class='comma'>,</span> <span class='id identifier rubyid_file1'>file1</span><span class='comma'>,</span> <span class='id identifier rubyid_file2'>file2</span><span class='comma'>,</span> <span class='id identifier rubyid_text1'>text1</span><span class='comma'>,</span> <span class='id identifier rubyid_text2'>text2</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_tags1'>tags1</span> <span class='op'>=</span> <span class='id identifier rubyid_change_tags'>change_tags</span><span class='lparen'>(</span><span class='id identifier rubyid_changes'>changes</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>left</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
@@ -910,13 +935,13 @@
       <pre class="lines">
 
 
-64
-65
-66
-67</pre>
+112
+113
+114
+115</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/smart_diff/htmlize.rb', line 64</span>
+      <pre class="code"><span class="info file"># File 'lib/smart_diff/htmlize.rb', line 112</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_html_footer'>html_footer</span>
   <span class='id identifier rubyid_out'>out</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>%Q{</span><span class='tstring_content'>&lt;/body&gt;\n
@@ -930,42 +955,71 @@
       <div class="method_details ">
   <h3 class="signature " id="html_header-instance_method">
   
-    - (<tt>Object</tt>) <strong>html_header</strong> 
+    - (<tt>String</tt>) <strong>html_header</strong> 
   
 
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Construct the HTML for the top of the file.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>HTML header.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-42
-43
-44
-45
-46
-47
-48
-49
-50
-51
-52
-53
-54
-55
-56
-57
-58
-59
-60
-61
-62</pre>
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/smart_diff/htmlize.rb', line 42</span>
+      <pre class="code"><span class="info file"># File 'lib/smart_diff/htmlize.rb', line 90</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_html_header'>html_header</span>
   <span class='id identifier rubyid_install_path'>install_path</span> <span class='op'>=</span> <span class='id identifier rubyid_get_install_path'>get_install_path</span>
@@ -1008,20 +1062,20 @@
       <pre class="lines">
 
 
-165
-166
-167
-168
-169
-170
-171
-172
-173
-174
-175</pre>
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/smart_diff/htmlize.rb', line 165</span>
+      <pre class="code"><span class="info file"># File 'lib/smart_diff/htmlize.rb', line 217</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_link_start'>link_start</span><span class='lparen'>(</span><span class='id identifier rubyid_change'>change</span><span class='comma'>,</span> <span class='id identifier rubyid_side'>side</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_cls'>cls</span> <span class='op'>=</span> <span class='id identifier rubyid_change_class'>change_class</span><span class='lparen'>(</span><span class='id identifier rubyid_change'>change</span><span class='rparen'>)</span>
@@ -1054,12 +1108,12 @@
       <pre class="lines">
 
 
-177
-178
-179</pre>
+229
+230
+231</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/smart_diff/htmlize.rb', line 177</span>
+      <pre class="code"><span class="info file"># File 'lib/smart_diff/htmlize.rb', line 229</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_qs'>qs</span><span class='lparen'>(</span><span class='id identifier rubyid_s'>s</span><span class='rparen'>)</span>
   <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>&#39;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_s'>s</span><span class='embexpr_end'>}</span><span class='tstring_content'>&#39;</span><span class='tstring_end'>&quot;</span></span>
@@ -1084,12 +1138,12 @@
       <pre class="lines">
 
 
-161
-162
-163</pre>
+213
+214
+215</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/smart_diff/htmlize.rb', line 161</span>
+      <pre class="code"><span class="info file"># File 'lib/smart_diff/htmlize.rb', line 213</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_span_start'>span_start</span><span class='lparen'>(</span><span class='id identifier rubyid_change'>change</span><span class='rparen'>)</span>
   <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>&lt;span class=</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_qs'>qs</span><span class='lparen'>(</span><span class='id identifier rubyid_change_class'>change_class</span><span class='lparen'>(</span><span class='id identifier rubyid_change'>change</span><span class='rparen'>)</span><span class='rparen'>)</span><span class='embexpr_end'>}</span><span class='tstring_content'>&gt;</span><span class='tstring_end'>&quot;</span></span>
@@ -1102,29 +1156,79 @@
       <div class="method_details ">
   <h3 class="signature " id="uid-instance_method">
   
-    - (<tt>Object</tt>) <strong>uid</strong>(node) 
+    - (<tt>Fixnum</tt>) <strong>uid</strong>(node) 
   
 
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Give the node a uid, place it in the uid hash and up the count. If it
+already has one, fetch it from the hash and return it.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>node</span>
+      
+      
+        <span class='type'>(<tt>org.jrubyparser.Node</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A node in the AST.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Fixnum</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The uid of the node passed in.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-33
-34
-35
-36
-37
-38
-39
-40</pre>
+76
+77
+78
+79
+80
+81
+82
+83</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/smart_diff/htmlize.rb', line 33</span>
+      <pre class="code"><span class="info file"># File 'lib/smart_diff/htmlize.rb', line 76</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_uid'>uid</span><span class='lparen'>(</span><span class='id identifier rubyid_node'>node</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='ivar'>@uid_hash</span><span class='period'>.</span><span class='id identifier rubyid_has_key?'>has_key?</span><span class='lparen'>(</span><span class='id identifier rubyid_node'>node</span><span class='rparen'>)</span>
@@ -1154,25 +1258,25 @@
       <pre class="lines">
 
 
-69
-70
-71
-72
-73
-74
-75
-76
-77
-78
-79
-80
-81
-82
-83
-84</pre>
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/smart_diff/htmlize.rb', line 69</span>
+      <pre class="code"><span class="info file"># File 'lib/smart_diff/htmlize.rb', line 117</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_write_html'>write_html</span><span class='lparen'>(</span><span class='id identifier rubyid_text'>text</span><span class='comma'>,</span> <span class='id identifier rubyid_side'>side</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_out'>out</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span>
@@ -1200,7 +1304,7 @@
 </div>
 
     <div id="footer">
-  Generated on Fri Sep 13 17:10:49 2013 by
+  Generated on Sat Sep 14 03:08:10 2013 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.6.1 (ruby-2.0.0).
 </div>

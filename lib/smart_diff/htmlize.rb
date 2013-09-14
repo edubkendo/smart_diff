@@ -1,21 +1,55 @@
 require "cgi"
 require_relative "utils.rb"
 
+
+#
+# A Tag wrapping an element in an HTML file.
+# It contains information about the node wrapped inside
+# it such as the start and end offset. The `tag` attr contains
+# the actual HTML, and includes information used to style the nodes
+# based on whether its an insertion, deletion or modification.
+# Matching modifications are wrapped in anchor tags so they can be
+# linked to their matches.
+#
+#
 class Tag
   attr_accessor :tag, :idx, :start
 
+
+  #
+  # Construct a new tag.
+  #
+  # @param  tag [String] An HTML tag.
+  # @param  idx [Fixnum] The start of the node's offset for an opening tag,
+  # The end offset of the node if it is a closing tag.
+  # @param  start [Fixnum] Left -1 for an open tag, the node's start offset
+  # for a closing tag.
+  #
+  # @return [Tag] The Tag which was constructed.
   def initialize(tag, idx, start=-1)
     @tag = tag
     @idx = idx
     @start = start
   end
 
+
+  #
+  # String representation of the Tag object.
+  #
+  # @return [String] Tag as string.
   def to_s
     "tag: #{@tag}, idx: #{@idx} start: #{@start}"
   end
 
 end
 
+
+#
+# Given information about two Ruby files, and their
+# semantic diff, creates an HTML file to represent the
+# diff information in an intuitive and appealing visual
+# format.
+#
 class Htmlize
   include Utils
   attr_accessor :uid_count, :uid_hash
@@ -30,6 +64,15 @@ class Htmlize
     @uid_hash = {}
   end
 
+
+  #
+  # Give the node a uid, place it in the uid hash and
+  # up the count. If it already has one, fetch it from the hash
+  # and return it.
+  #
+  # @param  node [org.jrubyparser.Node] A node in the AST.
+  #
+  # @return [Fixnum] The uid of the node passed in.
   def uid(node)
     if @uid_hash.has_key?(node)
       return @uid_hash[node]
@@ -39,6 +82,11 @@ class Htmlize
     @uid_hash[node] = @uid_count.to_s
   end
 
+
+  #
+  # Construct the HTML for the top of the file.
+  #
+  # @return [String] HTML header.
   def html_header
     install_path = get_install_path
 
@@ -131,15 +179,19 @@ class Htmlize
           if inside_anchor?(tags, nd_start, nd_end)
             if change_class(c) =~ /c/
               # no op
+              # we don't nest anchors inside other anchors
             else
+              # In this case, we have an insertion or deletion
               tags << Tag.new(span_start(c), nd_start)
               tags << Tag.new('</span>', nd_end, nd_start)
             end
           else
+            # Link up the matching nodes with anchor tags
             tags << Tag.new(link_start(c, side), nd_start)
             tags << Tag.new('</a>', nd_end, nd_start)
           end
         else
+          # Wrap a span around the insertion or deletion.
           tags << Tag.new(span_start(c), nd_start)
           tags << Tag.new('</span>', nd_end, nd_start)
         end
