@@ -1,5 +1,13 @@
 files = `git ls-files -- doc/* example/* lib/* spec/* web/*`.split("\n")
 
+[
+  "bin/smart_diff",
+  "README.md",
+  "foo.rb-bar.rb.html",
+  "Rakefile"
+].each { |x| files << x }
+
+
 Gem::Specification.new do |s|
   s.name        = 'smart_diff'
   s.version     = '0.0.1'
@@ -8,14 +16,7 @@ Gem::Specification.new do |s|
   s.description = "Create Semantic Diffs of Ruby source code based on the AST."
   s.authors     = ["Eric West"]
   s.email       = 'esw9999@gmail.com'
-  s.files       =
-                  [
-                    "bin/smart_diff",
-                    "README.md",
-                    "foo.rb-bar.rb.html",
-                    "Rakefile"
-                  ]
-  s.files << files
+  s.files       = files
   s.executables  << 'smart_diff'
   s.test_files = `git ls-files -- spec/*`.split("\n")
   s.platform    = Gem::Platform::RUBY
@@ -24,6 +25,6 @@ Gem::Specification.new do |s|
     'http://github.com/edubkendo/smart_diff.git'
   s.license       = 'GPL'
   s.add_dependency 'jruby-parser', '~> 0.5.1'
-  s.add_development_dependency 'rspec' '~> 2.14.0'
+  s.add_development_dependency 'rspec'
   s.add_development_dependency 'yard'
 end
