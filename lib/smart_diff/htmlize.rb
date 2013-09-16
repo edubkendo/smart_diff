@@ -121,7 +121,7 @@ class Htmlize
 
 
   #
-  # Takes in the text and outputs htmls.
+  # Takes in the text and outputs html.
   #
   # @param  text [String] the text from either side of the diff, w/ html tags.
   # @param  side [String] left or right
