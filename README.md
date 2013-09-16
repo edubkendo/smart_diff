@@ -11,7 +11,7 @@ something quite similar (create a diff of source code based on the AST rather th
 
 This application should especially serve as an example of using the subdiff's
 produced by NodeDiff to improve the quality of the output. See `bin/smart_diff`
- or [check out the docs](http://rubydoc.info/gems/smart_diff/0.0.1/frames).
+ or [check out the docs](http://rubydoc.info/gems/smart_diff/).
 
 ## Install
 
