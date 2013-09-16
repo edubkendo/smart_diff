@@ -25,7 +25,7 @@ Run `smart_diff` along with the paths to two versions of a ruby source file.
 
     smart_diff example/bar.rb example/foo.rb
 
-This will output an html file you can open in your browser. Check out `foo.rb-bar.rb.html` for a sample of the output.
+This will output an html file you can open in your browser. Check out [Example.html](http://rubydoc.info/gems/smart_diff/0.0.2/file/Example.html) for a sample of the output.
 
 LICENSE
 

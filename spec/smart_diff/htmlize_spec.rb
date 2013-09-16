@@ -26,7 +26,7 @@ describe "Htmlize" do
 
   it "should return the entry for a previously set hash" do
     html = Htmlize.new
-    html.uid_hash = { banana: "cow" }
+    html.uid_hash = { :banana => "cow" }
     html.uid(:banana).should =~ /cow/
   end
 

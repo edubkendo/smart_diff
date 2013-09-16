@@ -109,11 +109,24 @@ class Htmlize
     <body>\n}
   end
 
+
+  #
+  # Create the html for the bottom of the page.
+  #
+  # @return [String] the html footer.
   def html_footer
     out = %Q{</body>\n
              </html>\n}
   end
 
+
+  #
+  # Takes in the text and outputs htmls.
+  #
+  # @param  text [String] the text from either side of the diff, w/ html tags.
+  # @param  side [String] left or right
+  #
+  # @return [String] All the html for one side of the diff.
   def write_html(text, side)
     out = ""
 
@@ -131,6 +144,17 @@ class Htmlize
     out << '</div>'
   end
 
+
+  #
+  # Takes in the information about the diff and writes out a file of HTML.
+  #
+  # @param  changes [Array] An array of Changes, the diff
+  # @param  file1 [String] path to the first file.
+  # @param  file2 [String] path to the second file.
+  # @param  text1 [String] the text from the first file
+  # @param  text2 [String] the text from the second file.
+  #
+  # @return [String] The name of the HTML file that was written.
   def create_html(changes, file1, file2, text1, text2)
     tags1 = change_tags(changes, 'left')
     tags2 = change_tags(changes, 'right')
@@ -148,6 +172,15 @@ class Htmlize
 
   end
 
+
+  #
+  # Does HTML escaping on both tags and text, and places the tags around the
+  # appropriate text.
+  #
+  # @param  s [String] The text from one of the files.
+  # @param  tags [String] The tags belonging to one of the files.
+  #
+  # @return [String] The tagged text.
   def apply_tags(s, tags)
     tags = tags.sort_by { |x| [x.idx, -x.start] }
     curr = 0
@@ -166,6 +199,15 @@ class Htmlize
     return out
   end
 
+
+  #
+  # Works through the Change objects in the diff, creating the
+  # appropriate HTML tags for each.
+  #
+  # @param  changes [Array] An array of Change objects.
+  # @param  side [String] Tells us which side of the page to create tags for.
+  #
+  # @return [Array] The tags to place around the text.
   def change_tags(changes, side)
     tags = []
     changes.each do |c|
@@ -200,6 +242,13 @@ class Htmlize
     return tags
   end
 
+
+  #
+  # Determines whether the change is an insertion, deletion or modification.
+  #
+  # @param  change [Change] The Change object to be checked.
+  #
+  # @return [String] Either a 'c', 'd', or 'i'
   def change_class(change)
     if !change.old_node
       return 'd'
@@ -210,10 +259,26 @@ class Htmlize
     end
   end
 
+
+  #
+  # Takes a Change and creates a span tag.
+  #
+  # @param  change [Change] A single change from the diff representing either
+  # an insertion or deletion.
+  #
+  # @return [String] A span tag based on the Change passed in.
   def span_start(change)
     "<span class=#{qs(change_class(change))}>"
   end
 
+
+  #
+  # Create anchor tags for a Change object.
+  #
+  # @param  change [Change] The Change object to be wrapped.
+  # @param  side [String] Which side of the page, in other words, which file?
+  #
+  # @return [String] An anchor tag.
   def link_start(change, side)
     cls = change_class(change)
 
@@ -226,6 +291,13 @@ class Htmlize
     "<a id=#{qs(uid(me))} tid=#{qs(uid(other))} class=#{qs(cls)}>"
   end
 
+
+  #
+  # Takes a string and returns it in quotes.
+  #
+  # @param  s [String] A string to be quoted.
+  #
+  # @return [String] The quoted string.
   def qs(s)
     "'#{s}'"
   end

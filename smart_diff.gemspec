@@ -3,14 +3,14 @@ files = `git ls-files -- doc/* example/* lib/* spec/* web/*`.split("\n")
 [
   "bin/smart_diff",
   "README.md",
-  "foo.rb-bar.rb.html",
+  "Example.html",
   "Rakefile"
 ].each { |x| files << x }
 
 
 Gem::Specification.new do |s|
   s.name        = 'smart_diff'
-  s.version     = '0.0.1'
+  s.version     = '0.0.2'
   s.date        = '2013-09-08'
   s.summary     = "Ruby clone of psydiff"
   s.description = "Create Semantic Diffs of Ruby source code based on the AST."

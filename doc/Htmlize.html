@@ -193,7 +193,7 @@ visual format.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#apply_tags-instance_method" title="#apply_tags (instance method)">- (Object) <strong>apply_tags</strong>(s, tags) </a>
+      <a href="#apply_tags-instance_method" title="#apply_tags (instance method)">- (String) <strong>apply_tags</strong>(s, tags) </a>
     
 
     
@@ -207,7 +207,10 @@ visual format.</p>
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Does HTML escaping on both tags and text, and places the tags around the
+appropriate text.</p>
+</div></span>
   
 </li>
 
@@ -215,7 +218,7 @@ visual format.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#change_class-instance_method" title="#change_class (instance method)">- (Object) <strong>change_class</strong>(change) </a>
+      <a href="#change_class-instance_method" title="#change_class (instance method)">- (String) <strong>change_class</strong>(change) </a>
     
 
     
@@ -229,7 +232,9 @@ visual format.</p>
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Determines whether the change is an insertion, deletion or modification.</p>
+</div></span>
   
 </li>
 
@@ -237,7 +242,7 @@ visual format.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#change_tags-instance_method" title="#change_tags (instance method)">- (Object) <strong>change_tags</strong>(changes, side) </a>
+      <a href="#change_tags-instance_method" title="#change_tags (instance method)">- (Array) <strong>change_tags</strong>(changes, side) </a>
     
 
     
@@ -251,7 +256,10 @@ visual format.</p>
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Works through the Change objects in the diff, creating the appropriate HTML
+tags for each.</p>
+</div></span>
   
 </li>
 
@@ -281,7 +289,7 @@ visual format.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#create_html-instance_method" title="#create_html (instance method)">- (Object) <strong>create_html</strong>(changes, file1, file2, text1, text2) </a>
+      <a href="#create_html-instance_method" title="#create_html (instance method)">- (String) <strong>create_html</strong>(changes, file1, file2, text1, text2) </a>
     
 
     
@@ -295,7 +303,9 @@ visual format.</p>
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Takes in the information about the diff and writes out a file of HTML.</p>
+</div></span>
   
 </li>
 
@@ -303,7 +313,7 @@ visual format.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#html_footer-instance_method" title="#html_footer (instance method)">- (Object) <strong>html_footer</strong> </a>
+      <a href="#html_footer-instance_method" title="#html_footer (instance method)">- (String) <strong>html_footer</strong> </a>
     
 
     
@@ -317,7 +327,9 @@ visual format.</p>
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Create the html for the bottom of the page.</p>
+</div></span>
   
 </li>
 
@@ -375,7 +387,7 @@ visual format.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#link_start-instance_method" title="#link_start (instance method)">- (Object) <strong>link_start</strong>(change, side) </a>
+      <a href="#link_start-instance_method" title="#link_start (instance method)">- (String) <strong>link_start</strong>(change, side) </a>
     
 
     
@@ -389,7 +401,9 @@ visual format.</p>
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Create anchor tags for a Change object.</p>
+</div></span>
   
 </li>
 
@@ -397,7 +411,7 @@ visual format.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#qs-instance_method" title="#qs (instance method)">- (Object) <strong>qs</strong>(s) </a>
+      <a href="#qs-instance_method" title="#qs (instance method)">- (String) <strong>qs</strong>(s) </a>
     
 
     
@@ -411,7 +425,9 @@ visual format.</p>
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Takes a string and returns it in quotes.</p>
+</div></span>
   
 </li>
 
@@ -419,7 +435,7 @@ visual format.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#span_start-instance_method" title="#span_start (instance method)">- (Object) <strong>span_start</strong>(change) </a>
+      <a href="#span_start-instance_method" title="#span_start (instance method)">- (String) <strong>span_start</strong>(change) </a>
     
 
     
@@ -433,7 +449,9 @@ visual format.</p>
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Takes a Change and creates a span tag.</p>
+</div></span>
   
 </li>
 
@@ -465,7 +483,7 @@ visual format.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#write_html-instance_method" title="#write_html (instance method)">- (Object) <strong>write_html</strong>(text, side) </a>
+      <a href="#write_html-instance_method" title="#write_html (instance method)">- (String) <strong>write_html</strong>(text, side) </a>
     
 
     
@@ -479,7 +497,9 @@ visual format.</p>
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Takes in the text and outputs htmls.</p>
+</div></span>
   
 </li>
 
@@ -645,38 +665,104 @@ visual format.</p>
       <div class="method_details first">
   <h3 class="signature first" id="apply_tags-instance_method">
   
-    - (<tt>Object</tt>) <strong>apply_tags</strong>(s, tags) 
+    - (<tt>String</tt>) <strong>apply_tags</strong>(s, tags) 
   
 
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Does HTML escaping on both tags and text, and places the tags around the
+appropriate text.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>s</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The text from one of the files.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>tags</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The tags belonging to one of the files.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The tagged text.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-151
-152
-153
-154
-155
-156
-157
-158
-159
-160
-161
-162
-163
-164
-165
-166
-167</pre>
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/smart_diff/htmlize.rb', line 151</span>
+      <pre class="code"><span class="info file"># File 'lib/smart_diff/htmlize.rb', line 184</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_apply_tags'>apply_tags</span><span class='lparen'>(</span><span class='id identifier rubyid_s'>s</span><span class='comma'>,</span> <span class='id identifier rubyid_tags'>tags</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_tags'>tags</span> <span class='op'>=</span> <span class='id identifier rubyid_tags'>tags</span><span class='period'>.</span><span class='id identifier rubyid_sort_by'>sort_by</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_x'>x</span><span class='op'>|</span> <span class='lbracket'>[</span><span class='id identifier rubyid_x'>x</span><span class='period'>.</span><span class='id identifier rubyid_idx'>idx</span><span class='comma'>,</span> <span class='op'>-</span><span class='id identifier rubyid_x'>x</span><span class='period'>.</span><span class='id identifier rubyid_start'>start</span><span class='rbracket'>]</span> <span class='rbrace'>}</span>
@@ -703,30 +789,79 @@ visual format.</p>
       <div class="method_details ">
   <h3 class="signature " id="change_class-instance_method">
   
-    - (<tt>Object</tt>) <strong>change_class</strong>(change) 
+    - (<tt>String</tt>) <strong>change_class</strong>(change) 
   
 
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Determines whether the change is an insertion, deletion or modification.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>change</span>
+      
+      
+        <span class='type'>(<tt>Change</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The Change object to be checked.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Either a &#39;c&#39;, &#39;d&#39;, or &#39;i&#39;</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-203
-204
-205
-206
-207
-208
-209
-210
-211</pre>
+252
+253
+254
+255
+256
+257
+258
+259
+260</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/smart_diff/htmlize.rb', line 203</span>
+      <pre class="code"><span class="info file"># File 'lib/smart_diff/htmlize.rb', line 252</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_change_class'>change_class</span><span class='lparen'>(</span><span class='id identifier rubyid_change'>change</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='op'>!</span><span class='id identifier rubyid_change'>change</span><span class='period'>.</span><span class='id identifier rubyid_old_node'>old_node</span>
@@ -745,54 +880,120 @@ visual format.</p>
       <div class="method_details ">
   <h3 class="signature " id="change_tags-instance_method">
   
-    - (<tt>Object</tt>) <strong>change_tags</strong>(changes, side) 
+    - (<tt>Array</tt>) <strong>change_tags</strong>(changes, side) 
   
 
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Works through the Change objects in the diff, creating the appropriate HTML
+tags for each.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>changes</span>
+      
+      
+        <span class='type'>(<tt>Array</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>An array of Change objects.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>side</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Tells us which side of the page to create tags for.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The tags to place around the text.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-169
-170
-171
-172
-173
-174
-175
-176
-177
-178
-179
-180
-181
-182
-183
-184
-185
-186
-187
-188
-189
-190
-191
-192
-193
-194
-195
-196
-197
-198
-199
-200
-201</pre>
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/smart_diff/htmlize.rb', line 169</span>
+      <pre class="code"><span class="info file"># File 'lib/smart_diff/htmlize.rb', line 211</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_change_tags'>change_tags</span><span class='lparen'>(</span><span class='id identifier rubyid_changes'>changes</span><span class='comma'>,</span> <span class='id identifier rubyid_side'>side</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_tags'>tags</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
@@ -867,37 +1068,150 @@ visual format.</p>
       <div class="method_details ">
   <h3 class="signature " id="create_html-instance_method">
   
-    - (<tt>Object</tt>) <strong>create_html</strong>(changes, file1, file2, text1, text2) 
+    - (<tt>String</tt>) <strong>create_html</strong>(changes, file1, file2, text1, text2) 
   
 
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Takes in the information about the diff and writes out a file of HTML.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>changes</span>
+      
+      
+        <span class='type'>(<tt>Array</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>An array of Changes, the diff</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>file1</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>path to the first file.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>file2</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>path to the second file.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>text1</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the text from the first file</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>text2</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the text from the second file.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The name of the HTML file that was written.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-134
-135
-136
-137
-138
-139
-140
-141
-142
-143
-144
-145
-146
-147
-148
-149</pre>
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/smart_diff/htmlize.rb', line 134</span>
+      <pre class="code"><span class="info file"># File 'lib/smart_diff/htmlize.rb', line 158</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_create_html'>create_html</span><span class='lparen'>(</span><span class='id identifier rubyid_changes'>changes</span><span class='comma'>,</span> <span class='id identifier rubyid_file1'>file1</span><span class='comma'>,</span> <span class='id identifier rubyid_file2'>file2</span><span class='comma'>,</span> <span class='id identifier rubyid_text1'>text1</span><span class='comma'>,</span> <span class='id identifier rubyid_text2'>text2</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_tags1'>tags1</span> <span class='op'>=</span> <span class='id identifier rubyid_change_tags'>change_tags</span><span class='lparen'>(</span><span class='id identifier rubyid_changes'>changes</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>left</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
@@ -923,25 +1237,54 @@ visual format.</p>
       <div class="method_details ">
   <h3 class="signature " id="html_footer-instance_method">
   
-    - (<tt>Object</tt>) <strong>html_footer</strong> 
+    - (<tt>String</tt>) <strong>html_footer</strong> 
   
 
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Create the html for the bottom of the page.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the html footer.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-112
-113
-114
-115</pre>
+117
+118
+119
+120</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/smart_diff/htmlize.rb', line 112</span>
+      <pre class="code"><span class="info file"># File 'lib/smart_diff/htmlize.rb', line 117</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_html_footer'>html_footer</span>
   <span class='id identifier rubyid_out'>out</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>%Q{</span><span class='tstring_content'>&lt;/body&gt;\n
@@ -1050,32 +1393,97 @@ visual format.</p>
       <div class="method_details ">
   <h3 class="signature " id="link_start-instance_method">
   
-    - (<tt>Object</tt>) <strong>link_start</strong>(change, side) 
+    - (<tt>String</tt>) <strong>link_start</strong>(change, side) 
   
 
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Create anchor tags for a Change object.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>change</span>
+      
+      
+        <span class='type'>(<tt>Change</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The Change object to be wrapped.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>side</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Which side of the page, in other words, which file?</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>An anchor tag.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-217
-218
-219
-220
-221
-222
-223
-224
-225
-226
-227</pre>
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/smart_diff/htmlize.rb', line 217</span>
+      <pre class="code"><span class="info file"># File 'lib/smart_diff/htmlize.rb', line 282</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_link_start'>link_start</span><span class='lparen'>(</span><span class='id identifier rubyid_change'>change</span><span class='comma'>,</span> <span class='id identifier rubyid_side'>side</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_cls'>cls</span> <span class='op'>=</span> <span class='id identifier rubyid_change_class'>change_class</span><span class='lparen'>(</span><span class='id identifier rubyid_change'>change</span><span class='rparen'>)</span>
@@ -1096,24 +1504,73 @@ visual format.</p>
       <div class="method_details ">
   <h3 class="signature " id="qs-instance_method">
   
-    - (<tt>Object</tt>) <strong>qs</strong>(s) 
+    - (<tt>String</tt>) <strong>qs</strong>(s) 
   
 
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Takes a string and returns it in quotes.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>s</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A string to be quoted.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The quoted string.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-229
-230
-231</pre>
+301
+302
+303</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/smart_diff/htmlize.rb', line 229</span>
+      <pre class="code"><span class="info file"># File 'lib/smart_diff/htmlize.rb', line 301</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_qs'>qs</span><span class='lparen'>(</span><span class='id identifier rubyid_s'>s</span><span class='rparen'>)</span>
   <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>&#39;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_s'>s</span><span class='embexpr_end'>}</span><span class='tstring_content'>&#39;</span><span class='tstring_end'>&quot;</span></span>
@@ -1126,24 +1583,75 @@ visual format.</p>
       <div class="method_details ">
   <h3 class="signature " id="span_start-instance_method">
   
-    - (<tt>Object</tt>) <strong>span_start</strong>(change) 
+    - (<tt>String</tt>) <strong>span_start</strong>(change) 
   
 
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Takes a Change and creates a span tag.</p>
+
+<p>an insertion or deletion.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>change</span>
+      
+      
+        <span class='type'>(<tt>Change</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A single change from the diff representing either</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A span tag based on the Change passed in.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-213
-214
-215</pre>
+270
+271
+272</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/smart_diff/htmlize.rb', line 213</span>
+      <pre class="code"><span class="info file"># File 'lib/smart_diff/htmlize.rb', line 270</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_span_start'>span_start</span><span class='lparen'>(</span><span class='id identifier rubyid_change'>change</span><span class='rparen'>)</span>
   <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>&lt;span class=</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_qs'>qs</span><span class='lparen'>(</span><span class='id identifier rubyid_change_class'>change_class</span><span class='lparen'>(</span><span class='id identifier rubyid_change'>change</span><span class='rparen'>)</span><span class='rparen'>)</span><span class='embexpr_end'>}</span><span class='tstring_content'>&gt;</span><span class='tstring_end'>&quot;</span></span>
@@ -1246,37 +1754,102 @@ already has one, fetch it from the hash and return it.</p>
       <div class="method_details ">
   <h3 class="signature " id="write_html-instance_method">
   
-    - (<tt>Object</tt>) <strong>write_html</strong>(text, side) 
+    - (<tt>String</tt>) <strong>write_html</strong>(text, side) 
   
 
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Takes in the text and outputs htmls.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>text</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the text from either side of the diff, w/ html tags.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>side</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>left or right</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>All the html for one side of the diff.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-117
-118
-119
-120
-121
-122
-123
-124
-125
-126
-127
-128
-129
 130
 131
-132</pre>
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/smart_diff/htmlize.rb', line 117</span>
+      <pre class="code"><span class="info file"># File 'lib/smart_diff/htmlize.rb', line 130</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_write_html'>write_html</span><span class='lparen'>(</span><span class='id identifier rubyid_text'>text</span><span class='comma'>,</span> <span class='id identifier rubyid_side'>side</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_out'>out</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span>
@@ -1304,7 +1877,7 @@ already has one, fetch it from the hash and return it.</p>
 </div>
 
     <div id="footer">
-  Generated on Sat Sep 14 03:08:10 2013 by
+  Generated on Mon Sep 16 00:14:34 2013 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.6.1 (ruby-2.0.0).
 </div>
