@@ -10,8 +10,8 @@ said NodeDiff classes are entirely unrelated to psydiff, except that they do
 something quite similar (create a diff of source code based on the AST rather than comparing the text directly).
 
 This application should especially serve as an example of using the subdiff's
-produced by NodeDiff to improve the quality of the output. See `bin/smart_diff`
- or [check out the docs](http://rubydoc.info/gems/smart_diff/).
+produced by NodeDiff to improve the quality of the output. See [`bin/smart_diff`](https://github.com/edubkendo/smart_diff/blob/master/bin/smart_diff)
+ or [check out the docs](http://edubkendo.github.io/smart_diff/).
 
 ## Install
 

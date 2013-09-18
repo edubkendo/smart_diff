@@ -41,11 +41,11 @@ class SmartDiff
 
   #
   # Parse the source into an abstract syntax tree.
+  #
   # @param  code_to_parse [String] Ruby source code.
   # @param  file_name [String] The path to the file containing code_to_parse
   #
-  # @return [org.jrubyparser.Node] A Node object representing the code as an
-  # AST.
+  # @return [org.jrubyparser.Node] A Node object representing the code as AST.
   def parse(code_to_parse, file_name)
     JRubyParser.parse(code_to_parse, { :filename => file_name })
   end
@@ -54,8 +54,7 @@ class SmartDiff
   #
   # Create a diff of the two AST objects.
   #
-  # @return [java.util.ArrayList] An ArrayList containing
-  # org.jrubyparser.DeepDiff objects.
+  # @return [java.util.ArrayList<DeepDiff>] The differences.
   def diff()
     @code_one = read(@file_one)
     @code_two = read(@file_two)

@@ -20,10 +20,8 @@ class Tag
   # Construct a new tag.
   #
   # @param  tag [String] An HTML tag.
-  # @param  idx [Fixnum] The start of the node's offset for an opening tag,
-  # The end offset of the node if it is a closing tag.
-  # @param  start [Fixnum] Left -1 for an open tag, the node's start offset
-  # for a closing tag.
+  # @param  idx [Fixnum] for open tag: start offset. closing tag: end offset
+  # @param  start [Fixnum] for open tag: -1. for closing tag: start offset.
   #
   # @return [Tag] The Tag which was constructed.
   def initialize(tag, idx, start=-1)
@@ -263,8 +261,7 @@ class Htmlize
   #
   # Takes a Change and creates a span tag.
   #
-  # @param  change [Change] A single change from the diff representing either
-  # an insertion or deletion.
+  # @param  change [Change] A single change, either an insertion or deletion.
   #
   # @return [String] A span tag based on the Change passed in.
   def span_start(change)
