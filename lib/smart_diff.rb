@@ -1,6 +1,7 @@
 require "jruby-parser"
 require "pathname"
 require "jruby-parser.jar"
+import org.jrubyparser.lexer.SyntaxException
 
 import org.jrubyparser.util.diff.NodeDiff
 
@@ -47,7 +48,12 @@ class SmartDiff
   #
   # @return [org.jrubyparser.Node] A Node object representing the code as AST.
   def parse(code_to_parse, file_name)
-    JRubyParser.parse(code_to_parse, { :filename => file_name })
+    begin
+      JRubyParser.parse(code_to_parse, { :filename => file_name })
+    rescue SyntaxException => e
+      puts "Is this file valid ruby?"
+      raise e
+    end
   end
 
 

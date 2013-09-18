@@ -3,6 +3,13 @@
 require_relative "../lib/smart_diff"
 require_relative "../lib/smart_diff/htmlize"
 
+if ARGV.size < 2
+  puts "Please call SmartDiff with two ruby files."
+  puts "Like: "
+  puts "\t$ smart_diff example/file1.rb example/file2.rb"
+  exit -1
+end
+
 file_path1 = ARGV[0]
 file_path2 = ARGV[1]
 

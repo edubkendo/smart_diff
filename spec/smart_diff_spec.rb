@@ -1,4 +1,5 @@
 require "smart_diff"
+import org.jrubyparser.lexer.SyntaxException
 
 describe "SmartDiff" do
   before(:each) do
@@ -21,6 +22,11 @@ describe "SmartDiff" do
   it "should parse the files into ASTs" do
     code_for_parse = @rd.read(@rd.file_one)
     @rd.parse(code_for_parse, @rd.file_one).instance_of?(org.jrubyparser.ast.RootNode).should be(true)
+  end
+
+  it "should raise an exception if the code is invalid ruby" do
+    code_for_parse = "Def BadRubyCodeIsBAda end puts cLas$"
+    expect { @rd.parse(code_for_parse, @rd.file_one) }.to raise_error(SyntaxException)
   end
 
   it "should create a diff of the two ASTs" do
